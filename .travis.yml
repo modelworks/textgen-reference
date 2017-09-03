@@ -11,4 +11,5 @@ before_install:
   - luarocks install busted
 
 script:
-  - busted
+  - cd tests && ./check-schemas.sh
+  - cd tests && ./run-tests.sh

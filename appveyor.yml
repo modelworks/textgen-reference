@@ -13,4 +13,5 @@ build_script:
 #  - luarocks make
 
 test_script:
-  - busted
+  - cd tests && check-schemas.bat
+  - cd tests && run-tests.bat
