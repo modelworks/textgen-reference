@@ -1,20 +1,21 @@
 language: python
 sudo: false
 
-#env:
-#  - LUA="lua 5.1"
+env:
+  - LUA="lua 5.1"
 
-#before_install:
-#  - pip install hererocks
-#  - hererocks env --$LUA -rlatest    # Use latest LuaRocks, install into 'env' directory.
-#  - source env/bin/activate          # Add directory with all installed binaries to PATH.
-#  - luarocks install busted
+before_install:
+  - pip install jsonschema
+  - pip install hererocks
+  - hererocks env --$LUA -rlatest    # Use latest LuaRocks, install into 'env' directory.
+  - source env/bin/activate          # Add directory with all installed binaries to PATH.
+  - luarocks install busted
 
-addons:
-  apt:
-    packages:
-      - lua-busted
-      - python3-jsonschema
+#addons:
+#  apt:
+#    packages:
+#      - lua-busted
+#      - python3-jsonschema
 
 script:
   - cd tests && ./check-schemas.sh
