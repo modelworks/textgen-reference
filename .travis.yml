@@ -18,5 +18,6 @@ before_install:
 #      - python3-jsonschema
 
 script:
-  - cd tests && ./check-schemas.sh
-  - cd tests && ./run-tests.sh
+  - cd tests
+  - ./check-schemas.sh
+  - ./run-tests.sh
